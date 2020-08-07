@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Button from 'react-bootstrap/Button';
+//import './buttonDesign.scss'
+import { Container, Row, Col } from 'react-bootstrap';
+//import './buttonDesign.scss';
+//import './gameCode.css';
+
 function Square(props) {
     return (
-        <button className="square" onClick={props.onClick}>
+        <button className="square" class = "button" size="lg"
+            onClick={props.onClick} style={{}} block>
             {props.value}
-        </button>
+            </button>
     );
 }
 
@@ -13,10 +20,13 @@ class Board extends React.Component {
 
     constructor(props) {
         super(props);
+        var possibleColors = {};
         this.state = {
             squares: Array(9).fill(null),
             xIsNext: true,
+            //boxColor: possibleColors[Math.floor(Math.random() * items.length)];
         };
+
     }
 
     handleClick(i) {
@@ -40,8 +50,7 @@ class Board extends React.Component {
     render() {
         const winner = calculateWinner(this.state.squares);
         let status;
-        if (winner && winner != "Draw")
-        {
+        if (winner && winner != "Draw") {
             status = 'Winner: ' + winner;
         }
         else if (winner === "Draw") {
@@ -49,27 +58,46 @@ class Board extends React.Component {
         }
         else {
             status = 'Next player: ' +
-            (this.state.xIsNext ? 'X' : 'O');
+                (this.state.xIsNext ? 'X' : 'O');
         }
         return (
-            <div>
-                <h1 className="status">{status}</h1>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
-            </div>
+            <Container>
+                <h1 className="status" id = "top_phrase">{status}</h1>
+                <Row xs="3" className="board-row">
+
+                    <Col>
+                            {this.renderSquare(0)}
+                    </Col>
+                    <Col>
+                        {this.renderSquare(1)}
+                    </Col>
+                    <Col>
+                        {this.renderSquare(2)}
+                    </Col>
+                </Row>
+                <Row xs="3" className="board-row">
+                    <Col>
+                        {this.renderSquare(3)}
+                    </Col>
+                    <Col>
+                        {this.renderSquare(4)}
+                    </Col>
+                    <Col>
+                        {this.renderSquare(5)}
+                    </Col>
+                </Row>
+                <Row xs="3" className="board-row">
+                    <Col>
+                        {this.renderSquare(6)}
+                    </Col>
+                    <Col>
+                        {this.renderSquare(7)}
+                    </Col>
+                    <Col >
+                        {this.renderSquare(8)}
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }

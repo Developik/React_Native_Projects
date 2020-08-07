@@ -2,33 +2,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Game from './gamecode.js';
+import './App.scss';
+import Game from './gamecode.js'; 
+import Button from 'react-bootstrap/Button';
+import { Container, Row, Col } from 'react-bootstrap';
 
 function App() {
     return (
       //<Game />
 
         <div className="App">
-            <Game/>
+            <Game />
         </div>
-    //  <header className="App-header">
-    //    <img src={logo} className="App-logo" alt="logo" />
-    //    <p>
-    //      Edit <code>src/App.js</code> and save to reload.
-    //    </p>
-    //    <a
-    //      className="App-link"
-    //      href="https://reactjs.org"
-    //      target="_blank"
-    //      rel="noopener noreferrer"
-    //    >
-    //      Learn React
-    //    </a>
-    //  </header>
-
-      //<div>
-
-      //</div>
   );
 }
 
