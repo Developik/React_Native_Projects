@@ -1,0 +1,209 @@
+
+.outer-wheel {
+    height: 3em;
+    width: 3em;
+    background-color: #bbb;
+    border: solid;
+    border-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+    padding: 0 0 0 0;
+    margin: 0 0 0 1em;
+    border-style: inset;
+    /*    z-index: 5000;*/
+}
+
+.inner-wheel {
+    height: 2vh;
+    width: 2vh;
+    background-color: yellow;
+    border: solid;
+    border-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+    padding: 0 0 0 0;
+    margin: 1em 0 0vw -2em;
+}
+
+.cannon {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 3em;
+    height: 11em;
+    border-radius: 1.5em/0.75em;
+    transform: rotate(60deg);
+    padding: 0 0 0 0;
+    bottom: 10em;
+    right: 5em;
+    /*    margin:0 0 7em 0;*/
+    background-color: rgba(191, 47, 47, 0.8);
+    transform-origin: 0% 100%;
+}
+
+.animate_cannon {
+    -webkit-animation: spin 3s linear forwards;
+    -moz-animation: spin 3s linear forwards;
+    animation: spin 3s linear forwards;
+}
+
+.hide_spin_wheels {
+    -webkit-animation: wheels 3s linear forwards;
+    -moz-animation: wheels 3s linear forwards;
+    animation: wheels 3s linear forwards;
+}
+
+@-moz-keyframes wheels {
+    99.999% {
+        -moz-transform: rotate(360deg);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes wheels {
+    99.999% {
+        -webkit-transform: rotate(360deg);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes wheels {
+    
+    99.999% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@-moz-keyframes spin {
+    99.999% {
+        -moz-transform: rotate(40deg);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes spin {
+    99.999% {
+        -webkit-transform: rotate(40deg);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes spin {
+    0% {
+    }
+    99.999% {
+        -webkit-transform: rotate(40deg);
+        transform: rotate(40deg);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+/*@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+ }
+
+    @keyframes rotation1 {
+        from {
+            transform: rotate(60deg);
+        }
+
+        to {
+            transform: rotate(20deg);
+        }
+    }
+
+    @keyframes rotation2 {
+        from {
+            transform: rotate(20deg);
+        }
+
+        to {
+            transform: rotate(100deg);
+        }
+    }
+    /*
+.Btn-lg {
+    padding: 100px 200px;
+    font-size: 200px;
+    border-radius: 10px;
+}*/
+/*html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}*/
+// The following code was copied from CodePen;
+// Author: Chris Smith;
+
+.container_param {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #3333ff 50%, #ffff66 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}

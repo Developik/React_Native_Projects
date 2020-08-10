@@ -7,14 +7,14 @@ $myColor: red;
     border: solid;
     border-color: black;
     color: white;
-    width: 10em;
-    height: 10em;
+    width: 4em;
+    height: 4em;
     margin: 0 0 1em 0;
     //padding: 5em 5em 5em 5em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 40px;
 }
 
 .button:hover {
@@ -26,9 +26,3 @@ $myColor: red;
     margin-bottom: 2em;
 }
 
-/*
-.Btn-lg {
-    padding: 100px 200px;
-    font-size: 200px;
-    border-radius: 10px;
-}*/
